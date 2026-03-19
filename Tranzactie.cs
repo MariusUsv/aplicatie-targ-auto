@@ -8,6 +8,7 @@ public class Tranzactie
     public DateTime DataTranzactie { get; set; }
     public double Pret { get; set; }
 
+    // Constructor
     public Tranzactie(Persoana vanzator, Persoana cumparator, Masina masina, DateTime data, double pret)
     {
         Vanzator = vanzator;

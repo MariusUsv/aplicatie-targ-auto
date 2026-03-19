@@ -6,6 +6,7 @@
     public string Culoare { get; set; }
     public string Optiuni { get; set; }
 
+    // Constructor
     public Masina(string firma, string model, int anFabricatie, string culoare, string optiuni)
     {
         Firma = firma;
