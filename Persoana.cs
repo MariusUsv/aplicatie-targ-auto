@@ -7,4 +7,9 @@
     {
         Nume = nume;
     }
+
+    public override string ToString()
+    {
+        return Nume;
+    }
 }
