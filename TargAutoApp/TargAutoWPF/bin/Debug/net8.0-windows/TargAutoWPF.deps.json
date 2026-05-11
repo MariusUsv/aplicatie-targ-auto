@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TargAutoWPF/1.0.0": {
+        "dependencies": {
+          "TargAutoApp": "1.0.0"
+        },
+        "runtime": {
+          "TargAutoWPF.dll": {}
+        }
+      },
+      "TargAutoApp/1.0.0": {
+        "runtime": {
+          "TargAutoApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TargAutoWPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TargAutoApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
