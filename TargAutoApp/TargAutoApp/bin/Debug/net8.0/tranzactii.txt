@@ -1,0 +1,2 @@
+Marius;Mihai;Ww;Golf;2001;negru;AC+Navigatie+Piele;1000;31.07.2001 00:00:00
+alex;vasile;mercedes;2;2016;albastru;AC;2000;31.07.2001 00:00:00
