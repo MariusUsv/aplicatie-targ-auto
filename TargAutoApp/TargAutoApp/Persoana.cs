@@ -1,9 +1,16 @@
-﻿public class Persoana
+﻿namespace TargAutoApp
 {
-    public string Nume { get; set; }
-
-    public Persoana(string nume)
+    public class Persoana
     {
-        Nume = nume;
+        public string Nume { get; set; }
+        public string Telefon { get; set; }
+        public string Email { get; set; }
+
+        public Persoana(string nume, string telefon = "", string email = "")
+        {
+            Nume = nume;
+            Telefon = telefon;
+            Email = email;
+        }
     }
 }

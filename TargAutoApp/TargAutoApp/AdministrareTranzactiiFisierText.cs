@@ -1,60 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-public class AdministrareTranzactiiFisierText : IStocareData
+namespace TargAutoApp
 {
-    private string numeFisier;
-
-    public AdministrareTranzactiiFisierText(string numeFisier)
+    public class AdministrareTranzactiiMemorie : IStocareData
     {
-        this.numeFisier = numeFisier;
-        File.Open(numeFisier, FileMode.OpenOrCreate).Close();
-    }
+        private List<Tranzactie> listaTranzactii = new List<Tranzactie>();
+        private List<Persoana> listaPersoane = new List<Persoana>();
 
-    public void AddTranzactie(Tranzactie t)
-    {
-        using (StreamWriter sw = new StreamWriter(numeFisier, true))
-        {
-            sw.WriteLine($"{t.Vanzator.Nume};{t.Cumparator.Nume};{t.Masina.Firma};{t.Masina.Model};{t.Masina.AnFabricatie};{t.Masina.Culoare};{t.Masina.Optiuni};{t.Pret};{t.DataTranzactie}");
-        }
-    }
-
-    public List<Tranzactie> GetTranzactii()
-    {
-        List<Tranzactie> lista = new List<Tranzactie>();
-
-        using (StreamReader sr = new StreamReader(numeFisier))
-        {
-            string linie;
-
-            while ((linie = sr.ReadLine()) != null)
-            {
-                string[] d = linie.Split(';');
-
-                Persoana v = new Persoana(d[0]);
-                Persoana c = new Persoana(d[1]);
-
-                Masina m = new Masina(
-                    d[2],
-                    d[3],
-                    int.Parse(d[4]),
-                    d[5],
-                    d[6]
-                );
-
-                Tranzactie t = new Tranzactie(
-                    v,
-                    c,
-                    m,
-                    DateTime.Parse(d[8]),
-                    double.Parse(d[7])
-                );
-
-                lista.Add(t);
-            }
-        }
-
-        return lista;
+        public void AddTranzactie(Tranzactie t) => listaTranzactii.Add(t);
+        public List<Tranzactie> GetTranzactii() => listaTranzactii;
+        public void DeleteTranzactie(Tranzactie t) => listaTranzactii.Remove(t);
+        public void AddPersoana(Persoana p) => listaPersoane.Add(p);
+        public List<Persoana> GetPersoane() => listaPersoane;
+        public void DeletePersoana(Persoana p) => listaPersoane.Remove(p);
+        public void UpdateTranzactie(Tranzactie v, Tranzactie n) { }
+        public void UpdatePersoana(Persoana v, Persoana n) { }
     }
 }
